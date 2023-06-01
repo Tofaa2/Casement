@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id("maven-publish")
+}
+
+group 'me.tofaa.casement'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven {
+        url = 'https://jitpack.io'
+    }
+}
+
+dependencies {
+    compileOnly 'com.github.Minestom.Minestom:Minestom:9b15acf4fa'
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+            groupId = 'com.github.Minestom.Minestom'
+            artifactId = 'Minestom'
+            version = '9b15acf4fa'
+        }
+    }
+}
